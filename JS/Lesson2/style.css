@@ -1,0 +1,23 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: black;
+}
+
+h1 {
+    color: royalblue;
+    font-size: 36px;
+    font-weight: bold;
+    text-align: center;
+}
+
+p {
+    color: orange;
+    font-size: 24px;
+    font-weight: bold;
+    text-align: center;
+}
