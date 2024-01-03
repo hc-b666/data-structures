@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Currency Convertor</title>
+</head>
+<body>
+    <!-- Title -->
+    <h1>Currency Convertor - Date(03.01.2024)</h1>
+    <!-- User Input -->
+    <input type="number" id="userInput" value="0">
+    <br>
+
+    <!-- Type of currency  -->
+    <input type="radio" id="dollarToSom" name="currency">
+    <label for="dollarToSom">Dollar to Som</label>
+    <br>
+    <input type="radio" id="somToDollar" name="currency">
+    <label for="somToDollar">Som to Dollar</label>
+    <br>
+
+    <!-- Button Convert -->
+    <button id="btnConvert" onclick="convert()">Convert</button>
+    <br>
+
+    <!-- Result -->
+    <span id="resultDisplay">Result: </span>
+
+    <!-- Javascript -->
+    <script src="script.js"></script>
+</body>
+</html>
