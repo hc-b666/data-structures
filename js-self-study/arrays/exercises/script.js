@@ -7,26 +7,33 @@ const maxNumber = document.getElementById("maxNumber");
 const averageNumber = document.getElementById("averageNumber");
 const evenNumbers = document.getElementById("evenNumbers");
 const oddNumbers = document.getElementById("oddNumbers");
+const medianNumber = document.getElementById("medianNumber");
 
 let allNumbers = []; // assign new array[]
 
 let max = 0;
 let average = 0;
+let median = 0;
 
 btnAdd.onclick = function() {
+    allNumbers.sort();
+
+
     // Exercise 1: User enters numbers and sumbits and all elements will be displayed
     let userValue = Number(userInput.value); // assign userInput to new variable userValue
     allNumbers.push(userValue); // push it to array
     resultDisplay.textContent = `All Numbers: ${allNumbers.join(', ')}`;
     
+
     // Exercise 2: Show Max number
     for (let number of allNumbers) {
         if (number > max) {
             max = number;
-            maxNumber.textContent = `Max is ${max}`;
         }
     }
+    maxNumber.textContent = `Max is ${max}`;
     
+
     // Exercise 3: Show Average
     let sum = 0; // reset sum each time button clicked
     for (let i = 0; i < allNumbers.length; i++) {
@@ -34,6 +41,7 @@ btnAdd.onclick = function() {
     }
     average = sum / allNumbers.length;
     averageNumber.textContent = `Average is ${average.toFixed(2)}`; 
+
 
     // Exercise 4: Even / Odd Numbers
     let evenNumbersArray = [];
@@ -48,6 +56,19 @@ btnAdd.onclick = function() {
             oddNumbers.textContent = `Odd Numbers: ${oddNumbersArray.join(', ')}`;
         }
     }
+
+    
+    // Exercise 5: Median
+    if (allNumbers.length % 2 === 1) {
+        let middleIndex = Math.floor(allNumbers.length / 2);
+        median = allNumbers[middleIndex];
+    }
+    else {
+        let middleIndex1 = allNumbers.length / 2 - 1;
+        let middleIndex2 = allNumbers.length / 2;
+        median = (allNumbers[middleIndex1] + allNumbers[middleIndex2]) / 2;
+    }
+    medianNumber.textContent = `Median: ${median}`;
 }
 
 
