@@ -1,17 +1,20 @@
-// Exercises with ARRAYS
+// Program that solves QM and ISDS questions
 
 const userInput = document.getElementById("userInput");
 const btnAdd = document.getElementById("btnAdd");
 const resultDisplay = document.getElementById("resultDisplay");
 const maxNumber = document.getElementById("maxNumber");
+const minNumber = document.getElementById("minNumber");
+const sumNumber = document.getElementById("sumNumber");
 const averageNumber = document.getElementById("averageNumber");
 const evenNumbers = document.getElementById("evenNumbers");
 const oddNumbers = document.getElementById("oddNumbers");
 const medianNumber = document.getElementById("medianNumber");
 
-let allNumbers = []; // assign new array[]
+let allNumbers = []; 
 
 let max = 0;
+let min = 0;
 let average = 0;
 let median = 0;
 
@@ -19,31 +22,34 @@ btnAdd.onclick = function() {
     allNumbers.sort();
 
 
-    // Exercise 1: User enters numbers and sumbits and all elements will be displayed
-    let userValue = Number(userInput.value); // assign userInput to new variable userValue
-    allNumbers.push(userValue); // push it to array
+    // Display All numbers that user entered
+    let userValue = Number(userInput.value); 
+    allNumbers.push(userValue); 
     resultDisplay.textContent = `All Numbers: ${allNumbers.join(', ')}`;
     
 
-    // Exercise 2: Show Max number
-    for (let number of allNumbers) {
-        if (number > max) {
-            max = number;
-        }
-    }
-    maxNumber.textContent = `Max is ${max}`;
+    // Max ->
+    max = Math.max(...allNumbers);
+    maxNumber.textContent = `Max: ${max}`;
+
+
+    // Min ->
+    min = Math.min(...allNumbers);
+    minNumber.textContent = `Min: ${min}`;
     
 
-    // Exercise 3: Show Average
-    let sum = 0; // reset sum each time button clicked
+
+    // Sum & Average ->
+    let sum = 0;
     for (let i = 0; i < allNumbers.length; i++) {
         sum = sum + allNumbers[i];
     }
     average = sum / allNumbers.length;
-    averageNumber.textContent = `Average is ${average.toFixed(2)}`; 
+    sumNumber.textContent = `Sum: ${sum}`;
+    averageNumber.textContent = `Average: ${average.toFixed(2)}`; 
 
 
-    // Exercise 4: Even / Odd Numbers
+    // Odd & Even -> 
     let evenNumbersArray = [];
     let oddNumbersArray = [];
     for (let number of allNumbers) {
@@ -58,7 +64,7 @@ btnAdd.onclick = function() {
     }
 
     
-    // Exercise 5: Median
+    // Median ->
     if (allNumbers.length % 2 === 1) {
         let middleIndex = Math.floor(allNumbers.length / 2);
         median = allNumbers[middleIndex];

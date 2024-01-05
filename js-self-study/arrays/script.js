@@ -64,3 +64,47 @@ for (let fruit of fruits) {
 
 
 
+
+
+// 2D Arrays
+let numbers = [[1, 2, 3], 
+               [4, 5, 6], 
+               [7, 8, 9]];
+console.log(numbers);
+
+// Accessing 2D Array Elements
+console.log(numbers[0][0]);
+console.log(numbers[1][2]);
+console.log(numbers[2][1]);
+
+// Looping 2D Array Elements
+for (let row of numbers) { // row is an array
+    const rowString = row.join(" "); // join() method joins the elements of an array into a string
+    console.log(rowString); // print the row
+}
+
+
+
+
+
+// Spread Operator
+let integers = [1, 2, 3, 4, 5];
+let max = Math.max(...integers); // ... is the spread operator that expands an array into a list of arguments
+let min = Math.min(...integers);
+
+console.log(max);
+console.log(min);
+
+let userName = "Bobur0218programmer";
+let letters = [...userName];
+
+console.log(letters);
+console.log(letters.join("").toUpperCase());
+
+
+// Adding two arrays
+let arr1 = [1, 2, 3];
+let arr2 = [4, 5, 6];
+let arr3 = [...arr1, ...arr2];
+
+console.log(arr3);
