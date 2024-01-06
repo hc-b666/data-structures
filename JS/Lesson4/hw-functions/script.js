@@ -71,15 +71,8 @@ let minMaxCalculator = (a = 1, b = 2, c = 3) => {
     return [min, max];
 }
 
-let [minResult, maxResult] = minMaxCalculator();
+let [minResult, maxResult] = minMaxCalculator(4, 2, 9);
 console.log(minResult, maxResult);
 
-// Exercise 6: Fahrenheit to Celcius - Expression Function
-let celciusToFahrenheit = function (celcius = 1) {
-    let fahrenheit = celcius * (9 / 5) + 32;
-    return fahrenheit;
-}
 
-let celciusToFahrenheitResult = celciusToFahrenheit(100);
-console.log(`${celciusToFahrenheitResult} Fahrenheit`);
 

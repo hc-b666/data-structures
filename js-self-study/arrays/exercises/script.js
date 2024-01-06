@@ -39,7 +39,7 @@ btnAdd.onclick = function() {
     
 
 
-    // Sum & Average ->
+    // Sum & Average & Mean ->
     let sum = 0;
     for (let i = 0; i < allNumbers.length; i++) {
         sum = sum + allNumbers[i];
