@@ -29,7 +29,7 @@ console.log(fruits);
 fruits.shift(); // remove the first element of an array
 console.log(fruits);
 
-fruits.sort(); // sort an array in ascending order
+fruits.sort(); // sort an array in ascending order only strings (sometimes works for numbers)
 
 fruits.reverse(); // reverse the order of the elements in an array
 

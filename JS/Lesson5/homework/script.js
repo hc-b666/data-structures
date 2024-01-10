@@ -44,39 +44,27 @@ let deliveryCost = 5000;
 let userName = prompt("What's your name? ");
 while (!userName) 
 {
-    if (!userName)
-        {
-            userName = prompt('Please enter your name!?');
-        }
+    userName = prompt('Please enter your name!?');
 }
 
 let userLocation = prompt("What's your location? ");
 while (!userLocation)
 {
-    if (!userLocation) 
-        {
-            userLocation = prompt('Please enter your location!?');
-        }
+    userLocation = prompt('Please enter your location!?');
 }
 
 let userFoodChoice = prompt("Which food did you choose from the menu?\n MENU\n 1. Lavash: 28000\n 2. Hamburger: 25000\n 3. Clubsandwich: 36000\n 4. Pizza: 75000\n 5. Cheeseburger: 28000\n 6. Doner: 20000\n Delivery Cost: 5000");
 userFoodChoice = userFoodChoice.toLowerCase();
 while (!foodCosts[userFoodChoice])
 {
-    if (!foodCosts[userFoodChoice]) 
-        {
-            userFoodChoice = prompt("Choose a food that is on menu!\n MENU\n 1. Lavash: 28000\n 2. Hamburger: 25000\n 3. Clubsandwich: 36000\n 4. Pizza: 75000\n 5. Cheeseburger: 28000\n 6. Doner: 20000\n Delivery Cost: 5000");
-        }
+    userFoodChoice = prompt("Choose a food that is on menu!\n MENU\n 1. Lavash: 28000\n 2. Hamburger: 25000\n 3. Clubsandwich: 36000\n 4. Pizza: 75000\n 5. Cheeseburger: 28000\n 6. Doner: 20000\n Delivery Cost: 5000");
 }
 
 let userMoney = prompt("Enter your money ");
 userMoney = Number(userMoney);
 while (!userMoney || userMoney < (foodCosts[userFoodChoice] + deliveryCost)) 
 {
-    if (!userMoney || userMoney < (foodCosts[userFoodChoice] + deliveryCost)) 
-        {
-            userMoney = prompt("Enter your money ");
-        }
+    userMoney = prompt("Enter your money ");
 }
 
 
