@@ -18,19 +18,38 @@ let min = 0;
 let average = 0;
 let median = 0;
 
-btnAdd.onclick = function() {
-    allNumbers.sort();
-
-
+btnAdd.onclick = function() 
+{
     // Display All numbers that user entered
     let userValue = Number(userInput.value); 
     allNumbers.push(userValue); 
-    resultDisplay.textContent = `All Numbers: ${allNumbers.join(', ')}`;
-    
+
+    function insertionSort(A) 
+    {
+        for (let j = 1; j < A.length; j++)
+    {
+        let key = A[j];
+        let i = j - 1;
+        while (i >= 0 && A[i] > key) 
+        {
+            A[i + 1] = A[i];
+            i--;
+        }
+        A[i + 1] = key;
+    }
+    return A;
+    }
+
+    insertionSort(allNumbers);
+
+    resultDisplay.textContent = `All Numbers: ${allNumbers.join(", ")}`;
+
+
 
     // Max ->
     max = Math.max(...allNumbers);
     maxNumber.textContent = `Max: ${max}`;
+
 
 
     // Min ->
@@ -41,35 +60,44 @@ btnAdd.onclick = function() {
 
     // Sum & Average & Mean ->
     let sum = 0;
-    for (let i = 0; i < allNumbers.length; i++) {
+    for (let i = 0; i < allNumbers.length; i++) 
+    {
         sum = sum + allNumbers[i];
     }
     average = sum / allNumbers.length;
     sumNumber.textContent = `Sum: ${sum}`;
-    averageNumber.textContent = `Average: ${average.toFixed(2)}`; 
+    averageNumber.textContent = `Average | Mean: ${average.toFixed(2)}`; 
+
 
 
     // Odd & Even -> 
     let evenNumbersArray = [];
     let oddNumbersArray = [];
-    for (let number of allNumbers) {
-        if (number % 2 === 0) {
+
+    for (let number of allNumbers) 
+    {
+        if (number % 2 === 0) 
+        {
             evenNumbersArray.push(number);
             evenNumbers.textContent = `Even Numbers: ${evenNumbersArray.join(', ')}`;
         }
-        else {
+        else 
+        {
             oddNumbersArray.push(number);
             oddNumbers.textContent = `Odd Numbers: ${oddNumbersArray.join(', ')}`;
         }
     }
 
     
+
     // Median ->
-    if (allNumbers.length % 2 === 1) {
+    if (allNumbers.length % 2 === 1) 
+    {
         let middleIndex = Math.floor(allNumbers.length / 2);
         median = allNumbers[middleIndex];
     }
-    else {
+    else 
+    {
         let middleIndex1 = allNumbers.length / 2 - 1;
         let middleIndex2 = allNumbers.length / 2;
         median = (allNumbers[middleIndex1] + allNumbers[middleIndex2]) / 2;
