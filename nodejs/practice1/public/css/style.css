@@ -1,0 +1,81 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+    list-style: none;
+}
+
+body {
+    background-color: aliceblue;
+    position: relative;
+    height: 100vh;
+}
+
+nav {
+    padding: 20px 100px;
+    background-color: white;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+nav ul {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+nav .buttons {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+.buttons button,
+.signup-form .contents .contents-buttons button,
+.login-form .contents .contents-buttons button {
+    padding: 8px 12px;
+}
+
+.signup-form {
+    border-radius: 20px;
+    background-color: aquamarine;
+    display: none;
+    position: absolute;
+    top: 50%;
+    left: 25%;
+    transform: translate(-25%, -50%);
+}
+.login-form {
+    border-radius: 20px;
+    background-color: cadetblue;
+    display: none;
+    position: absolute;
+    top: 50%;
+    right: 25%;
+    transform: translate(-25%, -50%);
+}
+
+.signup-form .contents,
+.login-form .contents {
+    padding: 30px;
+    width: 100%;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+}
+
+.signup-form .contents input,
+.login-form .contents input {
+    padding: 8px 12px;
+    border: none;
+    border-bottom: 1px solid black;
+    outline: none;
+    background-color: transparent;
+}
+
+.contents input::placeholder {
+    color: black;
+}
