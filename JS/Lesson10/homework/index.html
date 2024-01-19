@@ -7,9 +7,18 @@
     <link rel="stylesheet" href="./style.css">
 </head>
 <body>
+    <nav>
+        <h1>LOGO</h1>
+        <ul>
+            <li><a href="">Home</a></li>
+            <li><a href="">About</a></li>
+            <li><a href="">Contact</a></li>
+        </ul>
+        <button id="btnSignUp">Sign Up</button>
+    </nav>
     <div class="form-container">
         <h1>Sign Up Form</h1>
-        <form>
+        <form class="formApplication">
             <input type="text" placeholder="Name" name="userName" required>
             <input type="number" placeholder="Number" name="userPhoneNumber" required>
             <select name="userCountry" required>
@@ -22,6 +31,7 @@
             </select>
             <input type="email" placeholder="Email" name="userEmail" required>
             <input type="password" placeholder="Password" name="userPassword" required>
+            <button type="submit">Sign Up</button>
         </form>
     </div>
     <script src="./script.js"></script>
