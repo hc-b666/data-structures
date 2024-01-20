@@ -114,3 +114,12 @@ nav button {
     background-color: #4169e1;
     cursor: pointer;
 }
+
+#userInfo {
+    padding: 50px;
+}
+
+#userInfo h2,
+#userInfo span {
+    color: #FFF;
+}
