@@ -1,0 +1,25 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    padding: 30px;
+}
+
+/* img {
+    width: 450px;
+    height: 300px;
+    object-fit: cover;
+} */
+
+button {
+    padding: 8px 12px;
+    cursor: pointer;
+}
+
+
+input {
+    padding: 8px 12px;
+}
