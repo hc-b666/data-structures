@@ -65,28 +65,58 @@
 
 // exercise3
 
-const display = document.getElementById("display");
-const inputMoney = document.getElementById("inputMoney");
-const inputCardNumber = document.getElementById("inputCardNumber");
-const inputHowMany = document.getElementById("inputHowMany");
-const btnSubmit = document.getElementById("btnSubmit");
+// const display = document.getElementById("display");
+// const inputMoney = document.getElementById("inputMoney");
+// const inputCardNumber = document.getElementById("inputCardNumber");
+// const inputHowMany = document.getElementById("inputHowMany");
+// const btnSubmit = document.getElementById("btnSubmit");
 
-btnSubmit.addEventListener("click", function () 
-{
-    let money = Number(inputMoney.value);
-    let howmany = Number(inputHowMany.value);
+// btnSubmit.addEventListener("click", function () 
+// {
+//     let money = Number(inputMoney.value);
+//     let howmany = Number(inputHowMany.value);
 
-    if (money >= howmany) 
-    {
-        money = money - howmany;
-        display.textContent = `You have ${money} on your card. And You sent ${howmany} to ${inputCardNumber.value}`;
-    }
+//     if (money >= howmany) 
+//     {
+//         money = money - howmany;
+//         display.textContent = `You have ${money} on your card. And You sent ${howmany} to ${inputCardNumber.value}`;
+//     }
 
-    else 
-    {
-        display.textContent = `You don't have enough money on your card`;
-    }
-});
+//     else 
+//     {
+//         display.textContent = `You don't have enough money on your card`;
+//     }
+// });
+
+
+
+
+
+
+// Event bubbling
+// let eventBubbling = (event) => event.stopPropagation();
+
+// creating element
+// let element = document.createElement("div");
+
+// append
+// document.body.append(element);
+
+// appendChild
+// document.body.appendChild(element);
+
+// diffence between append and appendChild
+// append -> can append many elements
+// appendChild -> can append only one element
+
+// insertadjacentHTML()
+// element.insertAdjacentHTML("beforebegin", "<div>beforebegin</div>");
+// element.insertAdjacentHTML("afterbegin", "<div>afterbegin</div>");
+// element.insertAdjacentHTML("beforeend", "<div>beforeend</div>");
+// element.insertAdjacentHTML("afterend", "<div>afterend</div>");
+
+
+
 
 
 

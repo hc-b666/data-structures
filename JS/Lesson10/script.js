@@ -45,10 +45,10 @@ let users = ["John", "Jack", "Jane"];
 // }
 
 // 5. for in
-for (let index in users)
-{
-    console.log(index, users[index]);
-}
+// for (let index in users)
+// {
+//     console.log(index, users[index]);
+// }
 
 // difference between for of and for in
 // for of -> returns value
