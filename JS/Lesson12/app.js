@@ -1,3 +1,4 @@
+"use strict";
 // array methods
 // length push pop shift unshift forEach map 
 
@@ -59,13 +60,18 @@ let arr4 = [1, 2, 3, 4, 5];
 console.log(arr4.slice(1, 3)); // [2, 3]
 console.log(arr4.slice(1)); // [2, 3, 4, 5]
 console.log(arr4.slice(-2)); // [4, 5]
-console.log(arr4.slice(-2, -1)); // [4]
+console.log(arr4.slice(-2, -1)); // [4] 
 console.log(arr4) // [1, 2, 3, 4, 5]
 
 // splice is a method that changes the contents of an array by removing or replacing existing elements and/or adding new elements in place (array)
 let arr5 = arr4.splice(1, 2)
 console.log(arr5); // [2, 3]
 console.log(arr4); // [1, 4, 5]
+
+let arr6 = [1, 2, 3, 4, 5, 6];
+let arr7 = arr6.splice(2, 0, 400)
+console.log(arr7);
+console.log(arr6);       
 
 
 
@@ -74,3 +80,50 @@ console.log(arr4); // [1, 4, 5]
 // immutable methods indexOf lastIndexOf at includes flat toString concat join slice map forEach
 
 
+
+
+// Exercise 1
+let arrayFruits = ["Banana", "Orange", "Apple", "Mango", "Kiwi"];
+
+let userInput = document.getElementById('userInput');
+let btnBuy = document.getElementById("btnBuy");
+
+btnBuy.addEventListener('click', function () 
+{
+    let userFruit = userInput.value;
+
+    if (arrayFruits.includes(userFruit))
+    {
+        let fruitIndex = arrayFruits.indexOf(userFruit) + 1;
+
+        let element = document.createElement("h1");
+        element.textContent = `${userFruit} ${fruitIndex} qatorda`;
+        document.body.append(element);
+    }
+    else 
+    {
+        let element = document.createElement("h1");
+        element.textContent = `${userFruit} yoq`;
+        document.body.append(element);
+    }
+});
+
+
+// Exercise 2
+let body = document.body;
+let userNumber = document.getElementById('userNumber');
+let btnShow = document.getElementById("btnShow");
+
+btnShow.addEventListener('click', function () 
+{
+    let userNum = +userNumber.value;
+    
+    let newNumberArray = new Array(userNum);
+    newNumberArray.fill("*");
+
+    let element = document.createElement("p");
+    element.style.fontSize = "36px";
+    element.textContent = newNumberArray.join("");
+
+    document.body.append(element);
+});
