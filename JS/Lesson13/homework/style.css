@@ -1,0 +1,86 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: #000000;
+}
+
+nav {
+    padding: 30px;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 30px;
+}
+
+input, select, button {
+    font-size: 18px;
+    padding: 8px 12px;
+    border: none;
+    outline: none;
+}
+
+input {
+    width: 400px;
+    border-top-left-radius: 8px;
+    border-bottom-left-radius: 8px;
+}
+
+select {
+    border-radius: 8px;
+    cursor: pointer;
+}
+
+.search-brand {
+    display: flex;
+    align-items: center;
+}
+
+#btnSearch {
+    color: white;
+    border-top-right-radius: 8px;
+    border-bottom-right-radius: 8px;
+    background-color: royalblue;
+    cursor: pointer;
+}
+
+.container {
+    margin: 50px auto;
+    padding: 30px;
+    width: 100%;
+    height: auto;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 30px;
+}
+
+.cards {
+    padding-bottom: 20px;
+    width: 400px;
+    height: auto;
+    border-radius: 20px;
+    background-color: white;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.cards img {
+    width: 400px;
+    height: 330px;
+    border-top-right-radius: 20px;
+    border-top-left-radius: 20px;
+    object-fit: cover;
+}
+
+.cards .content {
+    padding-inline: 20px;
+}
+
+.content h1 {
+    font-size: 24px;
+}
