@@ -61,7 +61,13 @@ let userSelect = document.querySelector("select");
 let btnReset = document.getElementById("btnReset");
 let inputBrand = document.getElementById("inputBrand");
 let btnSearch = document.getElementById("btnSearch");
+let btnExpensive = document.getElementById("btnExpensive");
+let btnCheap = document.getElementById("btnCheap");
+let inputMin = document.getElementById("inputMin");
+let inputMax = document.getElementById("inputMax");
+let btnSort = document.getElementById("btnSort");
 
+// Display Products
 function displayProducts (array) 
 {
     container.innerHTML = "";
@@ -80,6 +86,7 @@ function displayProducts (array)
     }); 
 }
 
+// Display Products according to userSelect 
 function userSelectDisplay (event) 
 {
     let selectedValue = event.target.value;
@@ -88,6 +95,7 @@ function userSelectDisplay (event)
     displayProducts(filteredProductsArray);
 }
 
+// Filter according to userinput
 function userInputSearch () 
 {
     let sortedArray = [];
@@ -106,8 +114,39 @@ function userInputSearch ()
     displayProducts(sortedArray);
 }
 
+// Btn Expensive -> Cheap 
+btnExpensive.addEventListener("click", () => 
+{
+    let expensiveProductsArray = [...productsArray].sort((a, b) => a.price > b.price ? -1 : 1);
+
+    displayProducts(expensiveProductsArray);
+});
+
+// Btn Cheap -> Expensive 
+btnCheap.addEventListener("click", () => 
+{
+    let cheapProductsArray = [...productsArray].sort((a, b) => a.price > b.price ? 1 : -1);
+
+    displayProducts(cheapProductsArray);
+});
+
+function sortByUserInput () 
+{
+    let minValue = Number(inputMin.value);
+    let maxValue = Number(inputMax.value);
+
+    let sortedArray = productsArray.filter(product => product.price >= minValue && product.price <= maxValue);
+
+    displayProducts(sortedArray);
+
+    inputMin.textContent = "";
+    inputMax.textContent = "";
+}
+
+btnSort.addEventListener("click", sortByUserInput);
 displayProducts(productsArray);
 userSelect.addEventListener("change", userSelectDisplay);
 btnReset.addEventListener("click", () => displayProducts(productsArray));
 btnSearch.addEventListener("click", userInputSearch);
+
 
