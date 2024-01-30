@@ -31,5 +31,7 @@
 // tag.innerHTML = ``;  // clear tag
 
 
-// array.toSorted - clones the array
-// array.toReverse - clones the array and reverses it 
+// array.toSorted - clones the array and sorts
+// array.toReversed - clones the array and reverses it 
+
+// form (event)  event.target.reset()

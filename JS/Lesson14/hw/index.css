@@ -1,0 +1,68 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    transition: .4s;
+}
+
+body {
+    padding: 50px 20px;
+    background-color: cyan;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 50px;
+}
+
+h1, h3 {
+    padding: 30px;
+    text-align: center;
+    border-radius: 16px;
+    background-color: white;
+    display: inline-block;
+}
+
+h1 {font-size: 56px;}
+h3 {font-size: 24px;}
+
+.search-bar {
+    padding: 20px;
+    width: 80%;
+    border-radius: 16px;
+    background-color: white;
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 20px;
+}
+
+.cards {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+input, select {
+    font-size: 16px;
+    padding: 8px 12px;
+    width: 100%;
+    border: 1px solid black;
+    border-radius: 8px;
+    outline: none;
+}
+
+input:focus, select:focus {
+    border: none;
+    outline: 1px solid royalblue;
+    transform: scale(1.1);
+}
+
+button {
+    color: white;
+    font-size: 24px;
+    font-weight: 700;
+    border: none;
+    border-radius: 16px;
+    outline: none;
+    background-color: royalblue;
+    cursor: pointer;
+}
