@@ -76,7 +76,7 @@ console.log(arr6);
 
 
 // mutable vs immutable
-// mutable methods push pop shift unsift splice reverse fill
+// mutable methods push pop shift unshift splice reverse fill
 // immutable methods indexOf lastIndexOf at includes flat toString concat join slice map forEach
 
 
