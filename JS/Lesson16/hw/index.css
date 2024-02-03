@@ -1,0 +1,17 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {padding: 30px;}
+input, button {
+    margin: 5px;
+    padding: 8px 12px;
+    border: 1px solid black;
+    border-radius: 4px;
+    outline: none;
+    display: block;
+}
+
+button {cursor: pointer;}
