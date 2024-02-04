@@ -1,61 +1,55 @@
-let randomNumber;
-let attempts = 0;
-const min = 1;
-const max = 100;
-const rollButton = document.getElementById("rollButton");
-const userGuess = document.getElementById("userGuess");
-const howClose = document.getElementById("howClose");
-const result = document.getElementById("result");
+// February 4, 2024
+"use strict";
 
-// Choosing a Random number
-rollButton.onclick = function() 
+const qs = tag => document.querySelector(tag);
+const getID = tag => document.getElementById(tag);
+
+const btnChooseRandomNumber = getID("btnChooseRandomNumber");
+const userGuess = getID("userGuess");
+const btnCheckUserGuess = getID("btnCheckUserGuess");
+const displayHint = qs(".displayHint");
+
+let min = 1;
+let max = 100;
+let randomNum;
+let attempt = 1;
+
+function randomNumber () 
 {
-    randomNumber = Math.round(Math.random() * (max - min)) + min;
-    rollButton.textContent = "Number is chosen";
-    howClose.textContent = "";
-    attempts = 0;
+    randomNum = Math.round(Math.random() * (max - min) + min);
+    btnChooseRandomNumber.textContent = "Number is Chosen";
 }
 
-// Checking whether the guess is correct
-userGuess.onclick = function() 
+function checkUserGuess ()
 {
-    // if random number is undefined
-    if (randomNumber == undefined) 
+    let userGuessValue = +userGuess.value;
+
+    if (userGuessValue < 1 || userGuessValue > 100) 
     {
-        howClose.textContent = "Choose a number!";
-    }
-    // if userinput is less than 1 or higher than 100
-    else if (min > document.getElementById("userInput").value || max < document.getElementById("userInput").value) 
-    {
-        howClose.textContent = `Choose a number between ${min} and ${max}.`
+        alert("The number should be around 1 and 100. Try Again!");
     }
     else 
     {
-        // Number of attempts
-        attempts++;
-        // Checking
-        console.log(randomNumber);
-        console.log(document.getElementById("userInput").value);
-        // Correct
-        if (document.getElementById("userInput").value == randomNumber) 
+        if (userGuessValue === randomNum)
         {
-            result.textContent = `You are CORRECT! You guessed it in ${attempts} attempts`;
-            rollButton.textContent = "Choose a number";
-            howClose.textContent = "";
+            alert(`Correct! You guessed it with ${attempt} attempts!`);
+            attempt = 1;
+            btnChooseRandomNumber.textContent = "Choose Random Number";
+            randomNum = null;
+            displayHint.textContent = "";
         }
-        // Incorrect
         else 
         {
-            result.textContent = "You are wrong";
-            // Giving a hint to user
-            if (document.getElementById("userInput").value < randomNumber) 
-            {
-                howClose.textContent = `Higher! Random Number is higher than ${document.getElementById("userInput").value}.`;
-            }
-            else 
-            {
-                howClose.textContent = `A bit less! Random Number is less than ${document.getElementById("userInput").value}.`;
-            }
+            displayHint.textContent = userGuessValue < randomNum ? `Random Number is higher than ${userGuessValue}` : `Random Number is less than ${userGuessValue}`;
+            attempt++;
         }
     }
+
+    userGuess.value = "";
 }
+
+window.addEventListener("DOMContentLoaded", function ()
+{
+    btnChooseRandomNumber.addEventListener("click", randomNumber);
+    btnCheckUserGuess.addEventListener("click", checkUserGuess);
+});

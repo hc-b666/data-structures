@@ -1,14 +1,22 @@
+:root {
+    --primary-clr: #03e9f4;
+}
+
 * {
     margin: 0;
     padding: 0px;
     box-sizing: border-box;
+    color: var(--primary-clr);
+    text-transform: uppercase;
+    font-size: 1rem;
     font-family: Arial, Helvetica, sans-serif;
+    font-weight: bold;
+    letter-spacing: 4px;
+    transition: .4s;
 }
 
 body {
-    color: #03e9f4;
-    font-size: 1rem;
-    font-weight: bold;
+    width: 100vw;
     height: 100vh;
     background-color: #000;
     display: flex;
@@ -17,7 +25,8 @@ body {
 }
 
 .container {
-    padding: 50px 200px;
+    width: 70vw;
+    padding: 50px 30px;
     border-radius: 50px;
     box-shadow: 0 0 5px #0f435a,
                 0 0 25px #0f435a,
@@ -30,55 +39,19 @@ body {
     gap: 30px;
 }
 
-input {
-    color: #03e9f4;
-    text-transform: uppercase;
-    font-size: 1rem;
-    font-weight: bold;
-    letter-spacing: 4px;
+input, button {
     padding: 20px 25px;
-    border: 1px solid #03e9f4;
-    background-color: transparent;
+    border: 1px solid var(--primary-clr);
     border-radius: 10px;
     outline: none;
-}
-
-label {
-    color: #03e9f4;
-    text-transform: uppercase;
-    text-align: center;
-    font-size: 1rem;
-    font-weight: bold;
-    letter-spacing: 4px;
-}
-
-button {
-    color: #03e9f4;
-    text-transform: uppercase;
-    font-size: 1rem;
-    font-weight: bold;
-    letter-spacing: 4px;
-    padding: 20px 25px;
-    border: 1px solid #03e9f4;
-    border-radius: 15px;
-    outline: none;
-    background-color: transparent;
-    overflow: hidden;
-    display: inline-block;
-    position: relative;
-    transition: .5s;
+    background: transparent;
 }
 
 button:hover {
     color: #050801;
-    background-color: #03e9f4;
-    box-shadow: 0 0 5px #03e9f4,
-                0 0 25px #03e9f4,
-                0 0 50px #03e9f4,
-                0 0 200px #03e9f4;
-    /* shadow from below */
-    /* -webkit-box-reflect: below 1px linear-gradient(transparent, #0005); */
+    background-color: var(--primary-clr);
+    box-shadow: 0 0 5px var(--primary-clr),
+                0 0 25px var(--primary-clr),
+                0 0 50px var(--primary-clr),
+                0 0 200px var(--primary-clr);
 }
-
-
-
