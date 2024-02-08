@@ -32,24 +32,22 @@ window.addEventListener("DOMContentLoaded", function ()
 });
 
 // object
-// object for in works
-// number, boolean key -> string, array cannot be
+// object can iterated with for item in object 
+// number, boolean string can be used as a key in object but it will be converted to string, array and object cannot be
 
-// MAP OBJECTS
-// let map = new Map([
-// ["name", "bobur"], ["age", 19] 
-// ])
+// MAP OBJECTS are iterable and array objects number boolean string can be used as a key 
+// let map = new Map([ ["name", "bobur"], ["age", 19] ])
 // map.set(key, value)    add new key
-// map.size
-// map.has searches by key
-// map.get    gets value 
-// map.clear
+// map.size  returns size of map
+// map.has searches by key 
+// map.get(key)  returns value
+// map.clear   clears the map object
 
-// weakset   elements are objects not iterable
-// garbage collection 
+// difference between weakset and set is that weakset is not iterable and it does not have size property
+// garbage collection is done in weakset
 
-// weakmap   keys are objects types
-
+// difference between weakmap and map is that weakmap is not iterable and it does not have size property
+// garbage collection is done in weakmap
 
 
 // String.padStart(length, value)
@@ -57,24 +55,23 @@ window.addEventListener("DOMContentLoaded", function ()
 
 
 
-// ES ECHASCRIPT    5,6 grand change in js let const added
+// ES - ECHASCRIPT    
+// ES 6 there was update with variables
 
-// this 
+// this = window. always returns window object 
 
 // arrow function always returns window 
-// function d and e search parent 
-// use declaration in objects 
+// function d and e search parent. to solve this problem use use strict
+// use declaration function in objects 
 
-// object {functionname(){}}
+// object {name: "john", functionname(){}}
 
-// Object.freeze(object)
+// Object.freeze(object) // cannot be changed
 
-// new object
-// object.assign, object.create
+// new Object // creates new object
+// Object.assign // copies object 
+// Object.create // creates new object with prototype
 
-// function car(){}
+// constructors are used to create new objects with parameters
 // function Car(){}
-
-
-
-
+// to create constructor function use capital letter
