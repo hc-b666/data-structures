@@ -32,6 +32,7 @@ button, input {
     padding: 12px 16px;
     border: none;
     outline: none;
+    cursor: pointer;
 }
 
 #taskForm {
@@ -84,10 +85,11 @@ button, input {
     padding: 8px 12px;
     border-bottom: 1px solid var(--black-line);
     border-radius: 8px;
-    box-shadow: 0px 1px 2.5px rgba(0, 0, 0, 0.3);
+    box-shadow: 0px 1px 2.5px var(--primary-clr);
     display: flex;
     align-items: center;
     gap: 10px;
+    position: relative;
 }
 
 .checked {
@@ -98,4 +100,39 @@ button, input {
 p {
     width: 100%;
     text-align: center;
+}
+
+.btn-setting {
+    margin-left: auto;
+    border-radius: 100px;
+    background: transparent;
+}
+
+.btn-setting:hover {
+    background-color: #f1f1f1;
+}
+
+.setting-container {
+    padding: 10px;
+    border-radius: 8px;
+    background-color: #f1f1f1;
+    display: block;
+    position: absolute;
+    right: 0;
+    bottom: -50px;
+    z-index: 100;
+}
+
+.setting-container > button {
+    color: var(--white);
+    margin-bottom: 6px;
+    padding: 6px 8px;
+    width: 100%;
+    border-radius: 8px;
+    background-color: var(--primary-clr);
+    display: block;
+}
+
+.not-visible {
+    display: none;
 }
