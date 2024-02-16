@@ -86,5 +86,5 @@ window.addEventListener("DOMContentLoaded", function ()
     {
         displayHead(userData[0]);
         displayBody(userData);
-    }, 500);
+    }, 1000);
 });
