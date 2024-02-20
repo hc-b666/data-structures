@@ -1,6 +1,6 @@
 // Javascript Lesson 2
-`user strict`
-// `user strict` - in strict mode, you can not, for example, use undeclared variables
+`use strict`
+// `use strict` - in strict mode, you can not, for example, use undeclared variables
 
 
 
@@ -21,6 +21,19 @@ console.log(`My name is ${name}. I am ${age} years old.`); // My name is John. I
 // Coersion is the process of converting one type to another
 // number + string = string
 // string + number = string
+// string - number = number
+// number - string = number
+// string * number = number
+// number * string = number
+// string / number = number
+// number / string = number
+// string % number = number
+// number % string = number
+// string ** number = number
+// number ** string = number
+// string + string = string
+// string - string = number
+
 
 
 

@@ -114,36 +114,3 @@ var bigInt = 1234567890123456789012345678901234567890n;
 // 10. Unary Operators - is delete, typeof, void
 // 11. Relational Operators - is in, instanceof
 // 12. Bitwise Operators - is a & b, a | b, a ^ b, a << b, a >> b, a >>> b
-
-
-
-
-
-
-// Arrays: --------------------------------------------------------------------------------------------
-// Arrays are used to store multiple values in a single variable
-// 1. Creating an array
-var fruits = ["Apple", "Banana", "Orange", "Mango"];
-// 2. Changing the value of the array
-fruits[2] = "Raspberry";
-// 3. Adding a new value to the array
-fruits[4] = "Strawberry";
-console.log(fruits);
-console.log(fruits.length);
-// 4. Accessing the last element of the array
-console.log(fruits[fruits.length - 1]);
-// 5. Accessing the first element of the array
-console.log(fruits[0]);
-// 6. Accessing the middle element of the array
-console.log(fruits[Math.floor(fruits.length / 2)]);
-
-
-
-
-
-
-
-
-
-
-

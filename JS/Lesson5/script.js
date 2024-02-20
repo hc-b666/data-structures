@@ -50,21 +50,21 @@ function multiply(a, b)
 // let and const are not hoisted, function expressions(arrow functions) are not hoisted
 
 // Variables
-console.log(varHoisted);
+console.log(varHoisted); // undefined
 var varHoisted = 'var hoisted';
 
-// console.log(letNotHoisted);
+// console.log(letNotHoisted); // ReferenceError: Cannot access 'letNotHoisted' before initialization
 let letNotHoisted = 'let not hoisted';
 
 // Functions
-functionDeclarationHoisted();
+functionDeclarationHoisted(); // function declaration hoisted
 
 function functionDeclarationHoisted()
 {
     console.log('function declaration hoisted');
 }
 
-// functionExpressionNotHoisted();
+// functionExpressionNotHoisted(); // TypeError: functionExpressionNotHoisted is not a function
 
 let functionExpressionNotHoisted = function () 
 {
