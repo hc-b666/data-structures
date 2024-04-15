@@ -1,6 +1,6 @@
 GET http://localhost:5000/tasks
 
-###
+### 
 
 GET http://localhost:5000/tasks/661cc005f0865714a09fae2b
 
@@ -25,3 +25,30 @@ Content-Type:  application/json
 
 ###
 DELETE http://localhost:5000/tasks/661cc11ad6c2ae3770254dc8
+
+
+### 
+POST http://localhost:5000/users/signup
+Content-Type: application/json
+
+{
+    "username": "John",
+    "email": "john@gmail.com",
+    "password": "john"
+}
+
+### 
+POST http://localhost:5000/users/login
+Content-Type: application/json
+
+{
+    "username": "Bob",
+    "password": "bob"
+}
+
+###
+GET http://localhost:5000/users
+
+###
+POST http://localhost:5000/users/logout
+

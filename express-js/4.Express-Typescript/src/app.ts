@@ -1,12 +1,35 @@
 import "dotenv/config";
 import express, { Request, Response, NextFunction } from "express";
+import session from "express-session";
 import createHttpError, { isHttpError } from "http-errors";
+import MongoStore from "connect-mongo";
+import env from "./validateEnv";
 import TasksRouter from "./routes/tasksRouter";
+import UsersRouter from "./routes/usersRouter";
+import { requiresAuth } from "./middlewares/auth";
 
 const app = express();
 app.use(express.json());
 
-app.use("/tasks", TasksRouter);
+// Sessions and cookies
+app.use(
+    session({
+        secret: env.SESSION_SECRET,
+        resave: false,
+        saveUninitialized: false,
+        cookie: {
+            maxAge: 60 * 60 * 1000,
+        },
+        rolling: true,
+        store: MongoStore.create({
+            mongoUrl: env.DATABASE_URL,
+        }),
+    })
+);
+
+// Routes
+app.use("/tasks", requiresAuth, TasksRouter);
+app.use("/users", UsersRouter);
 
 // Endpoints that does not exist
 app.use((req, res, next) => {
