@@ -1,5 +1,5 @@
-// day 1 part 1
-// i got 55712 as the result 
+// day 1 part 2
+// i got 55712 as the result
 
 const fs = require("fs");
 const readline = require("readline");
@@ -20,19 +20,56 @@ async function processLineByLine() {
     return result;
 }
 
+function convertStringToNumber(str) {
+    const stringNumbers = [
+        "zero",
+        "one",
+        "two",
+        "three",
+        "four",
+        "five",
+        "six",
+        "seven",
+        "eight",
+        "nine",
+    ];
+    return stringNumbers.indexOf(str.toLowerCase());
+}
+
+const arr = [
+    "51591twosix4dhsxvgghxq",
+    "425nine",
+    "llvmhjtr8nbbhrfone",
+    "lpbjvpbtdfvtxtdvkpjs7qrvddkzmjtlqtg",
+    "3sixnineseven",
+];
+
 function twoDigitNumber(str) {
     let number = 0;
-    let digits = str.match(/\d/g);
+    let digits = str.match(
+        /\d|\b(?:zero|one|two|three|four|five|six|seven|eight|nine)\b/gi
+    );
 
-    if (digits.length === 1) {
-        number = parseInt(`${digits[0]}${digits[0]}`);
-    } else if (digits.length > 1) {
-        number = parseInt(`${digits[0]}${digits[digits.length - 1]}`);
-    } else {
-        return number;
+    if (digits) {
+        digits = digits.map((digit) =>
+            isNaN(parseInt(digit))
+                ? convertStringToNumber(digit)
+                : parseInt(digit)
+        );
+
+        if (digits.length === 1) {
+            number = parseInt(`${digits[0]}${digits[0]}`);
+        } else if (digits.length > 1) {
+            number = parseInt(`${digits[0]}${digits[digits.length - 1]}`);
+        }
     }
 
     return number;
 }
 
-processLineByLine().then(console.log)
+function test(arr) {
+    return arr.map((str) => twoDigitNumber(str));
+}
+
+console.log(test(arr));
+// processLineByLine().then(console.log);
