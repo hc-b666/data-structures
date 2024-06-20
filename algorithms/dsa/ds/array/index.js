@@ -6,8 +6,8 @@ class Arrayyy {
     this.size = 0;
   }
 
-  insertElement(element, position = this.elements.length) {
-    var i = this.elements.length - 1;
+  insertElement(element, position = this.size) {
+    var i = this.size - 1;
     for (i; i >= position; i--) {
       this.elements[i + 1] = this.elements[i];
     }
@@ -16,8 +16,10 @@ class Arrayyy {
   }
 
   findElement(key) {
-    for (var i = 0; i < this.elements.length; i++) {
-      if (this.elements[i] === key) return { message: "Found", index: i, status: true };
+    for (var i = 0; i < this.size; i++) {
+      if (this.elements[i] === key) {
+        return { message: "Found", index: i, status: true };
+      } 
     }
     return { message: "Not Found", index: -1, status: false };
   }
@@ -27,12 +29,13 @@ class Arrayyy {
     
     if (pos.status === false) return pos.message; 
   
-    for (var i = pos.index; i < this.elements.length - 1; i++) { 
+    for (var i = pos.index; i < this.size - 1; i++) { 
       this.elements[i] = this.elements[i + 1];
     }
     this.elements.pop(); 
-  
-    return { message: "Deleted", length: this.elements.length };
+    this.size--;
+
+    return { message: "Deleted", length: this.size };
   }
 
 }
@@ -46,8 +49,6 @@ arr.insertElement("helo")
 arr.insertElement(5)
 arr.insertElement(4, 1);
 
-console.log(arr.findElement("helo"))
-console.log(arr.findElement(100))
-console.log(arr.elements)
+console.log(arr.size)
 console.log(arr.deleteElement(3))
-console.log(arr.elements)
+console.log(arr.size)
