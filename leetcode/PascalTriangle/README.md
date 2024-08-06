@@ -30,4 +30,4 @@ Output: [[1]]
 #### Constraints:
 <ul>
   <li>1 <= numRows <= 30</li>
-</ul>
+</ul> 
