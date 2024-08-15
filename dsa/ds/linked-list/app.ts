@@ -15,6 +15,11 @@ class LinkedList<T> {
   public tail: LinkedListNode<T> | null = null;
   private size: number = 0;
 
+  public get(index: number): T {
+    const values = this.traverse();
+    return values[index];
+  }
+
   public addAtBegin(value: T): void {
     const newNode = new LinkedListNode(value);
 
@@ -29,7 +34,7 @@ class LinkedList<T> {
     this.size++;
   }
 
-  public addAtEnd(value: T): void {
+  public addAtTail(value: T): void {
     const newNode = new LinkedListNode(value);
 
     if (!this.head) {
@@ -49,6 +54,30 @@ class LinkedList<T> {
     } else {
       const prevnode = node.previous;
       prevnode.next = node.next;
+    }
+
+    this.size--;
+  }
+
+  public deleteAtIndex(index: number): LinkedListNode<T> | void {
+    if (index < 0 || index >= this.size) {
+      return;
+    }
+
+    if (!this.head) {
+      return;
+    }
+
+    let current = this.head;
+
+    if (index === 0) {
+      this.head = current.next;
+    } else {
+      for (let i = 0; i < index - 1; i++) {
+        current = current.next;
+      }
+
+      current.next = current.next?.next;
     }
 
     this.size--;
@@ -76,14 +105,3 @@ class LinkedList<T> {
     return this.size;
   }
 }
-
-var linkedlist = new LinkedList();
-
-linkedlist.addAtEnd(5)
-linkedlist.addAtBegin(1)
-linkedlist.addAtEnd(3)
-var arr = linkedlist.traverse()
-console.log(arr)
-
-linkedlist
-console.log(linkedlist)

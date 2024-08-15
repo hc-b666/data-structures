@@ -12,6 +12,10 @@ class LinkedList {
         this.tail = null;
         this.size = 0;
     }
+    get(index) {
+        const values = this.traverse();
+        return values[index];
+    }
     addAtBegin(value) {
         const newNode = new LinkedListNode(value);
         if (!this.head) {
@@ -24,7 +28,7 @@ class LinkedList {
         }
         this.size++;
     }
-    addAtEnd(value) {
+    addAtTail(value) {
         const newNode = new LinkedListNode(value);
         if (!this.head) {
             this.head = newNode;
@@ -46,6 +50,26 @@ class LinkedList {
         }
         this.size--;
     }
+    deleteAtIndex(index) {
+        var _a;
+        if (index < 0 || index >= this.size) {
+            return;
+        }
+        if (!this.head) {
+            return;
+        }
+        let current = this.head;
+        if (index === 0) {
+            this.head = current.next;
+        }
+        else {
+            for (let i = 0; i < index - 1; i++) {
+                current = current.next;
+            }
+            current.next = (_a = current.next) === null || _a === void 0 ? void 0 : _a.next;
+        }
+        this.size--;
+    }
     traverse() {
         const arr = [];
         if (!this.head) {
@@ -64,11 +88,3 @@ class LinkedList {
         return this.size;
     }
 }
-var linkedlist = new LinkedList();
-linkedlist.addAtEnd(5);
-linkedlist.addAtBegin(1);
-linkedlist.addAtEnd(3);
-var arr = linkedlist.traverse();
-console.log(arr);
-linkedlist;
-console.log(linkedlist);
